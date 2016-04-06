@@ -1,0 +1,17 @@
+<h1><a href='/'>STATE FACEOFF</a><h1>
+
+<p>Which state is better?</p>
+
+<form method="POST" action="/winner">
+  <input type="hidden" name="winner" value="{{a_key}}">
+  <input type="hidden" name="loser" value="{{b_key}}">
+  <button type="submit">{{a_name}}</button>
+</form>
+
+  <p>...or</p>
+
+<form method="POST" action="/winner">
+  <input type="hidden" name="winner" value="{{b_key}}">
+  <input type="hidden" name="loser" value="{{a_key}}">
+  <button type="submit">{{b_name}}</button>
+</form>
