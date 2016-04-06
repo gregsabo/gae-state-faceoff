@@ -1,0 +1,7 @@
+<h1><a href='/'>STATE FACEOFF</a><h1>
+
+<h3>Overall rankings</h3>
+
+{% for state in states %}
+    <p>{{forloop.counter}}. {{state.name}} ({{state.score}})</p>
+{% endfor %}

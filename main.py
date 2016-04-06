@@ -38,8 +38,17 @@ class WinnerHandler(webapp2.RequestHandler):
         self.redirect('/faceoff')
 
 
+class RankingsHandler(webapp2.RequestHandler):
+    def get(self):
+        states = list(State.query().order(-State.score))
+        self.response.write(template.render('rankings.html', dict(
+            states=states,
+        )))
+
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/faceoff', FaceoffHandler),
     ('/winner', WinnerHandler),
+    ('/rankings', RankingsHandler),
 ], debug=True)
